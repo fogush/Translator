@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+    {{ form_start(form) }}
+    {{ form_row(form.saveTop) }}
+    {{ form_widget(form.content) }}
+    {{ form_row(form.saveBottom) }}
+    {{ form_end(form) }}
+{% endblock %}
