@@ -4,16 +4,18 @@ namespace App\Translator;
 
 use App\Entity\Translator;
 use App\Exception\StorageException;
+use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 
-class DataStorage
+class FileStorage implements StorageInterface
 {
     private const STORAGE_FILE = 'translator_storage.txt';
 
     private $storagePath;
 
-    public function __construct(string $varDir)
+    public function __construct(ParameterBagInterface $parameterBag)
     {
-        $this->storagePath = $varDir . DIRECTORY_SEPARATOR . self::STORAGE_FILE;
+        $projectDir = $parameterBag->get('kernel.project_dir');
+        $this->storagePath = $projectDir . DIRECTORY_SEPARATOR . 'var' . DIRECTORY_SEPARATOR . self::STORAGE_FILE;
     }
 
     /**

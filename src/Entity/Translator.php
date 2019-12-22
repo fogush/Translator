@@ -17,7 +17,7 @@ class Translator
     /**
      * @param mixed $content
      */
-    public function setContent($content): void
+    public function setContent(string $content): void
     {
         $this->content = $content;
     }

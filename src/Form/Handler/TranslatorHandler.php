@@ -2,7 +2,7 @@
 
 namespace App\Form\Handler;
 
-use App\Translator\DataStorage;
+use App\Translator\StorageInterface;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -10,7 +10,7 @@ class TranslatorHandler
 {
     private $dataStorage;
 
-    public function __construct(DataStorage $dataStorage)
+    public function __construct(StorageInterface $dataStorage)
     {
         $this->dataStorage = $dataStorage;
     }

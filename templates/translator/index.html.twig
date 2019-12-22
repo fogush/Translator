@@ -2,8 +2,9 @@
 
 {% block main %}
     {{ form_start(form) }}
-    {{ form_row(form.saveTop) }}
+    {{ form_row(form.saveTop, {attr: {class: 'btn-success'}}) }}
     {{ form_widget(form.content) }}
-    {{ form_row(form.saveBottom) }}
+    {{ form_row(form.saveBottom, {attr: {class: 'btn-success'}}) }}
+    <div> {{ form.vars.value.content }}</div>
     {{ form_end(form) }}
 {% endblock %}
