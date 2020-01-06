@@ -15,12 +15,6 @@ class TranslatorHandler
         $this->dataStorage = $dataStorage;
     }
 
-    /**
-     * @param FormInterface $translatorType
-     * @param Request $request
-     * @return bool
-     * @throws \App\Exception\StorageException
-     */
     public function handle(FormInterface $translatorType, Request $request): bool
     {
         $translatorType->handleRequest($request);

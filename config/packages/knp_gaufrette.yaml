@@ -1,0 +1,9 @@
+knp_gaufrette:
+  adapters:
+    translator:
+      local:
+        directory: '%kernel.project_dir%/var'
+  filesystems:
+    translator:
+      adapter: translator
+      alias: translator_filesystem

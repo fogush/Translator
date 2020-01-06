@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Exception\StorageException;
 use App\Form\Handler\TranslatorHandler;
 use App\Form\Type\TranslatorType;
 use App\Translator\StorageInterface;
@@ -27,7 +26,7 @@ class TranslatorController extends AbstractController
                 $this->addFlash('success', 'Data were saved');
                 return $this->redirectToRoute('app_translator_index');
             }
-        } catch (StorageException $exception) {
+        } catch (\Exception $exception) {
             $this->addFlash('danger', 'An error occurred: ' . $exception->getMessage());
         }
 

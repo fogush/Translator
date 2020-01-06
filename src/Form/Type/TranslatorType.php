@@ -14,7 +14,7 @@ class TranslatorType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('content', TextareaType::class)
+            ->add('content', TextareaType::class, ['required' => false])
             ->add('saveTop', SubmitType::class, ['label' => 'Save'])
             ->add('saveBottom', SubmitType::class, ['label' => 'Save'])
         ;

@@ -7,6 +7,13 @@
 actor: AcceptanceTester
 modules:
     enabled:
-        - PhpBrowser:
-            url: http://localhost:8000
+        - WebDriver:
+              # Application URL (host URL from containers):
+              url: 'http://172.17.0.1:8000'
+              # Selenium host:
+              host: localhost
+              # Selenium port:
+              port: 4444
+
+              browser: firefox
         - \App\Tests\Helper\Acceptance
